@@ -1,3 +1,5 @@
+const serverUrl = NODE_ENV === 'development' ? 'http://praktikum.tk/chorot3' : 'https://praktikum.tk/chorot3'
+
 const initialCards = [
 	{
 	  name: 'Архыз',
@@ -375,7 +377,7 @@ class Api {
 	}
 }
 
-const api = new Api('http://95.216.175.5', '26f2ac9c-9424-47a9-8a05-2d6b493d73bc');
+const api = new Api(serverUrl, '26f2ac9c-9424-47a9-8a05-2d6b493d73bc');
 
 api.getUser().then(res => { console.log(res); })
 api.getInitialCards().then(data => { new CardList(placesList, data); })
