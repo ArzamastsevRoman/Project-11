@@ -524,10 +524,3 @@ function validate(element) {
 
 
 
-
-
-
-
-
-
-
