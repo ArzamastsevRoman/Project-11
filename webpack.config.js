@@ -32,9 +32,7 @@ module.exports = {
                 test: /\.css$/, use: [
                 (isDev ? 'style-loader' : {
                     loader: MiniCssExtractPlugin.loader, 
-                    options: {
-                        publicPath: '../' 
-                    }
+                    
                 }),
                 'css-loader', 
                 'postcss-loader'
