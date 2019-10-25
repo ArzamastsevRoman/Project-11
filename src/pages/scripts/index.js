@@ -1,4 +1,3 @@
-import initialCards from './initialCards';	
 import Popup from './popup/popup';
 import PopupImage from './popup/__image/PopupImage';
 import CardList from './cardList/cardList';
