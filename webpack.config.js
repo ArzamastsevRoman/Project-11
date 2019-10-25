@@ -2,9 +2,8 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
-//const env = require('dotenv').config();
 const webpack = require('webpack');
-//const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin'); 
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin'); 
 //const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -73,6 +72,14 @@ module.exports = {
         new WebpackMd5Hash(),
         new webpack.DefinePlugin({
             'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+        }),
+        new OptimizeCssAssetsPlugin({
+            assetNameRegExp: /\.css$/g,
+            cssProcessor: require('cssnano'),
+            cssProcessorPluginOptions: {
+                preset: ['default'],
+            },
+            canPrint: true
         })
     ]
 };
