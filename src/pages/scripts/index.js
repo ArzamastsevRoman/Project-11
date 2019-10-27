@@ -1,5 +1,5 @@
 import Popup from './popup/popup';
-import PopupImage from './popup/__image/PopupImage';
+import PopupImage from './popup/__image/popupImage';
 import CardList from './cardList/cardList';
 import PopupInput from './popup/__input/popupInput';
 import PopupEdit from './popup/__edit/popupEdit';
